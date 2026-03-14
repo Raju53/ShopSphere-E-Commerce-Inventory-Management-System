@@ -1,3 +1,5 @@
+📦 Project Overview
+
 ShopSphere: An E-Commerce & Inventory Management System
 
 ShopSphere is a premium, full-stack e-commerce & inventory management system designed for high-fidelity logistics operations. Built with a robust Spring Boot backend and a modern, reactive React frontend, it provides a seamless experience for three distinct user roles: Customers, Suppliers, and Administrators.
