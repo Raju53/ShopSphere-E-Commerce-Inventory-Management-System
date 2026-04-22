@@ -27,6 +27,16 @@ public class ProductController {
         return productService.getProducts(page, size);
     }
 
+    @GetMapping("/supplier/products")
+    public Page<ProductResponse> getSupplierProducts(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            Authentication authentication) {
+
+        String username = authentication.getName();
+        return productService.getSupplierProducts(page, size, username);
+    }
+
     /**
      * SUPPLIER -> Add product
      * FIXED: Changed 'Product' entity to 'ProductRequest' DTO to match
