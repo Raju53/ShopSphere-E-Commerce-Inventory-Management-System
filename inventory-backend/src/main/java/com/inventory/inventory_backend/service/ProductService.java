@@ -30,6 +30,12 @@ public class ProductService {
                 .map(this::mapToProductResponse);
     }
 
+    public Page<ProductResponse> getSupplierProducts(int page, int size, String username) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("id"));
+        return productRepository.findBySupplierUsername(username, pageable)
+                .map(this::mapToProductResponse);
+    }
+
     public List<ProductResponse> getAllProducts() {
         return productRepository.findAll().stream()
                 .map(this::mapToProductResponse)
