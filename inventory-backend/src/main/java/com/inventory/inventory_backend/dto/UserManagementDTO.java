@@ -10,6 +10,6 @@ public class UserManagementDTO {
     private String username;
     private String email;
     private String role;
-    private Integer totalProducts; // Specific for Suppliers
-    private Integer totalOrders; // Specific for Users
+    private Long totalProducts; // Specific for Suppliers
+    private Long totalOrders; // Specific for Users
 }
