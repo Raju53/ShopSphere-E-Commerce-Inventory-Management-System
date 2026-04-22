@@ -55,8 +55,25 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar-header">
+              {/*
                 <h3 style={{ letterSpacing: '1px', color: '#fff' }}><Orbit size={20}/>ShopSphere</h3>
                 <p><User size={20}/> {user.role.replace('ROLE_', '')}</p>
+              */}
+              <div className="flex items-center gap-3 pt-4 m-4">
+                    <div className="bg-slate-600 p-2.5 rounded-xl flex items-center justify-center">
+                        <Orbit className="text-slate-200" size={24} />
+                    </div>
+                    {/* leading-none prevents extra line-height from pushing text down */}
+                    <span className="text-white font-black text-2xl tracking-tighter leading-none">
+                        ShopSphere
+                    </span>
+              </div>
+              <div className="flex items-center gap-3 pt-4 m-4">
+                  <div className="bg-slate-600 p-2.5 rounded-xl flex items-center justify-center">
+                        <User className="text-slate-200" size={20}/>
+                  </div>
+                  <p className='text-slate-200'> {user.role.replace('ROLE_', '')}</p>
+              </div>
             </div>
             <ul className="sidebar-links">
                 {renderLinks()}
