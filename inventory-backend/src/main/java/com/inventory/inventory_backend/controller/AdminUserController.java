@@ -1,7 +1,8 @@
 package com.inventory.inventory_backend.controller;
 
 import com.inventory.inventory_backend.entity.User;
-import com.inventory.inventory_backend.repository.UserRepository;
+import com.inventory.inventory_backend.dto.UserManagementDTO;
+import com.inventory.inventory_backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,18 +14,18 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AdminUserController {
 
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     @GetMapping("/users")
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<UserManagementDTO>> getAllUsers() {
         // This provides the data for both UserDetails.jsx and SupplierDetails.jsx
-        return ResponseEntity.ok(userRepository.findAll());
+        return ResponseEntity.ok(userService.getAllUsersForAdmin());
     }
 
     @DeleteMapping("/users/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         try {
-            userRepository.deleteById(id);
+            userServices.deleteById(id);
             return ResponseEntity.ok().build();
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body("Could not delete user");
