@@ -40,7 +40,7 @@ const SupplierOrders = () => {
         }
     };
 
-    if (loading) return <div style={{ textAlign: 'center', padding: '50px' }}>Loading Supplier Dashboard...</div>;
+    if (loading) return <div style={{ textAlign: 'center', padding: '50px' }}>Loading Customer Orders...</div>;
 
     return (
         <div style={{ padding: '30px', maxWidth: '1000px', margin: '0 auto' }}>
