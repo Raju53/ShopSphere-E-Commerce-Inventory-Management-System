@@ -59,8 +59,9 @@ const AdminDashboard = () => {
         <div style={{ padding: '20px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px' }}>
                 <h1 className='text-2xl font-bold'>Admin Control Panel</h1>
-                <button onClick={fetchAdminData} className="btn-light" style={{padding: '5px 5px', margin: '5px 5px', width: '100px', borderRadius: '5px'}}>
-                    <RefreshCw size={16} className={loading ? 'spin' : ''}/> Refresh
+                <button onClick={fetchAdminData} className="flex items-center justify-center gap-2 transition-all btn-light" style={{padding: '5px 5px', margin: '5px 5px', width: '100px', borderRadius: '5px'}}>
+                    <RefreshCw size={16} className={loading ? 'spin' : ''}/>
+                        <span className="text-xs font-bold uppercase tracking-widest leading-none">Refresh</span>
                 </button>
             </div>
 
@@ -100,7 +101,7 @@ const AdminDashboard = () => {
 const ProductTable = ({ data, onDelete }) => (
     <table>
         <thead>
-            <tr><th>ID</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr>
+            <tr><th>Product ID</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Action</th></tr>
         </thead>
         <tbody>
             {data.map(p => (
