@@ -71,6 +71,7 @@ const UserDetails = () => {
                         <th>ID</th>
                         <th>Username</th>
                         <th>Email</th>
+                        <th>Total Orders</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -81,6 +82,7 @@ const UserDetails = () => {
                                 <td>{c.id}</td>
                                 <td>{c.username}</td>
                                 <td>{c.email}</td>
+                                <td>{c.totalOrders}</td>
                                 <td><span className="status-active">Active</span></td>
                                 <td>
                                     <button 
