@@ -41,6 +41,27 @@ const SupplierDetails = () => {
         }
     };
 
+    const deleteUser = async (id) => {
+        if (window.confirm("Are you sure you want to delete this user?")) {
+            try {
+                const response = await fetch(`http://localhost:8081/api/admin/users/${id}`, {
+                    method: 'DELETE',
+                    headers: { 'Authorization': `Bearer ${user.token}` }
+                });
+
+                if (response.ok) {
+                    // Remove the user from the local state so they disappear from the UI immediately
+                    setVendors(prev => prev.filter(v => v.id !== id));
+                    alert("User deleted successfully");
+                } else {
+                    alert("Failed to delete user");
+                }
+            } catch (error) {
+                console.error("Delete error:", error);
+            }
+        }
+    };
+
     return (
         <div className="admin-table-container">
             <h2 className='text-2xl font-bold' style={{padding: '10px 20px', margin: '15px'}}>Vendor Management</h2>
@@ -60,7 +81,13 @@ const SupplierDetails = () => {
                                 <td>{v.id}</td>
                                 <td>{v.username}</td>
                                 <td>{v.email}</td>
-                                <td>{v.productCount || 0}</td>
+                                <td>{v.totalProducts || 0}</td>
+                                <td>
+                                    <button onClick={() => deleteUser(v.id)} 
+                                        style={{ background: 'none', border: 'none', color: '#e74c3c', cursor: 'pointer' }}>
+                                        <Trash2 size={18} />
+                                    </button>
+                                </td>
                             </tr>
                         ))
                     ) : (
