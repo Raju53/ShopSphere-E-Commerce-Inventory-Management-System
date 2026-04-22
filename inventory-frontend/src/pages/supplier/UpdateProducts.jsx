@@ -7,6 +7,7 @@ const UpdateProducts = () => {
     const [products, setProducts] = useState([]);
     const [editingId, setEditingId] = useState(null);
     const [editData, setEditData] = useState({});
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => { 
         if (user?.token) fetchMyProducts(); 
@@ -14,13 +15,16 @@ const UpdateProducts = () => {
 
     const fetchMyProducts = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/user/products', {
+            const response = await fetch('http://localhost:8080/api/supplier/products', {
                 headers: { 'Authorization': `Bearer ${user.token}` }
             });
             const data = await response.json();
             setProducts(data.content || data || []);
         } catch (error) {
             console.error("Error fetching products:", error);
+        }
+        finally {
+            setLoading(false)
         }
     };
 
@@ -73,6 +77,8 @@ const UpdateProducts = () => {
             }
         }
     };
+
+    if (loading) return <div style={{ textAlign: 'center', padding: '50px' }}>Loading My Inventory...</div>;
 
     return (
         <div className="admin-table-container">
