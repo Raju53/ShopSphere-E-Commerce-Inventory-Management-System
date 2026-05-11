@@ -84,12 +84,12 @@ Clone the repository and navigate to the frontend folder.
 
 Install dependencies:
 
-* `npm install`
+* ```npm install```
 
 
 Start the development server:
 
-* `npm run dev`
+* ```npm run dev```
 
 
 Access the app at **http://localhost:5173**.
