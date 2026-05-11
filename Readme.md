@@ -4,11 +4,11 @@ ShopSphere: An E-Commerce & Inventory Management System
 
 ShopSphere is an enterprise-grade logistics solution designed to bridge the gap between suppliers and customers.
 
-* For Customers: A high-fidelity marketplace to discover products and track orders.
+* **For Customers**: A high-fidelity marketplace to discover products and track orders.
 
-* For Suppliers: A powerful inventory console to manage stock health and listing assets.
+* **For Suppliers:** A powerful inventory console to manage stock health and listing assets.
 
-* For Admins: A global command center for user moderation and order fulfillment pipelines.
+* **For Admins:** A global command center for user moderation and order fulfillment pipelines.
 
 Built with a stateless architecture using JWT and a utility-first UI via Tailwind CSS, ShopSphere is optimized for speed, security, and scalability.
 
@@ -16,55 +16,55 @@ Built with a stateless architecture using JWT and a utility-first UI via Tailwin
 
 **Frontend**
 
-* React 18: Component-based UI library.
+* **React 18:** Component-based UI library.
 
-* Tailwind CSS: Utility-first CSS framework for a premium SaaS aesthetic.
+* **Tailwind CSS:** Utility-first CSS framework for a premium SaaS aesthetic.
 
-* Lucide Icons: Clean, scalable iconography.
+* **Lucide Icons:** Clean, scalable iconography.
 
-* Vite: Ultra-fast frontend build tool.
+* **Vite:** Ultra-fast frontend build tool.
 
 **Backend**
 
-  * Spring Boot 3: Robust Java framework for the RESTful API.
+  * **Spring Boot 3:** Robust Java framework for the RESTful API.
 
-  * Spring Security + JWT: Secure, stateless authentication.
+  * **Spring Security + JWT:** Secure, stateless authentication.
 
-  * Spring Data JPA: Efficient database communication.
+  * **Spring Data JPA:** Efficient database communication.
 
-  * MySQL: Relational database for persistent storage.
+  * **MySQL:** Relational database for persistent storage.
 
 ✨ Key Features
 
-1. Unified Dashboard
+1. **Unified Dashboard**
 
-   * Role-Based Access Control (RBAC): Personalized views for Users, Suppliers, and Admins.
+   * **Role-Based Access Control (RBAC):** Personalized views for Users, Suppliers, and Admins.
 
-   * Marketplace: Explore a dynamic product catalog with high-precision Rupee (₹) currency localization and real-time stock status.
+   * **Marketplace:** Explore a dynamic product catalog with high-precision Rupee (₹) currency localization and real-time stock status.
 
-   * Shopping Cart: Real-time total calculation and streamlined checkout.
+   * **Shopping Cart:** Real-time total calculation and streamlined checkout.
 
-2. Supplier Management
+2. **Supplier Management**
 
-   * Inventory Console: Monitor stock health and listing details.
+   * **Inventory Console:** Monitor stock health and listing details.
 
-   * Add Product: Launch new resources directly from the dashboard.
+   * **Add Product:** Launch new resources directly from the dashboard.
 
-   * Update Resource: Edit existing listings, including the ability to replace placeholder images with live asset URLs.
+   * **Update Resource:** Edit existing listings, including the ability to replace placeholder images with live asset URLs.
 
-3. Admin Fulfillment Pipeline
+3. **Admin Fulfillment Pipeline**
 
-   * Global Order Tracking: Oversee every transaction in the system.
+   * **Global Order Tracking:** Oversee every transaction in the system.
 
-   * Dynamic Status Colors:
+   * **Dynamic Status Colors:**
 
-        🟠 PENDING: Initial order state.
+        🟠 **PENDING:** Initial order state.
 
-        🔵 SHIPPED: Logistics in motion.
+        🔵 **SHIPPED:** Logistics in motion.
 
-        🟢 DELIVERED: Successfully fulfilled.
+        🟢 **DELIVERED:** Successfully fulfilled.
 
-        🔴 CANCELLED: Order voided.
+        🔴 **CANCELLED:** Order voided.
 
 🛠️ Setup Instructions
 
@@ -72,27 +72,32 @@ Built with a stateless architecture using JWT and a utility-first UI via Tailwin
 
   * Ensure MySQL is running and create a database.
 
-  * Update src/main/resources/application.properties with your database credentials.
+  * Update `application.properties` with your database credentials.
 
-  * Enable CORS in your WebConfig to allow requests from **http://localhost:5173**.
+  * Enable CORS in your WebConfig to allow requests from http://localhost:5173.
 
-  * Run the application via your IDE or ./**mvnw spring-boot:run**.
+  * Run the application via your IDE or
+    ```
+    ./mvnw spring-boot:run.
+    ```
 
 **Frontend** (React)
 
 Clone the repository and navigate to the frontend folder.
 
-Install dependencies:
+**Install dependencies:**
 
-* ```npm install```
+```
+npm install
+```
 
+**Start the development server:**
 
-Start the development server:
+```
+npm run dev
+```
 
-* ```npm run dev```
-
-
-Access the app at **http://localhost:5173**.
+Access the app at http://localhost:5173.
 
 🔐 Security Note
 
