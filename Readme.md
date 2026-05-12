@@ -78,7 +78,7 @@ Built with a stateless architecture using JWT and a utility-first UI via Tailwin
 
   * Run the application via your IDE or
     ```
-    ./mvnw spring-boot:run.
+    ./mvnw spring-boot:run
     ```
 
 **Frontend** (React)
